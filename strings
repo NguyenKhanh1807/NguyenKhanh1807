@@ -1,0 +1,51 @@
+//Exercise 1:
+fn exercise1(color: &str) -> String {
+    match color {
+        "red" => "rojo",
+        "green" => "verde",
+        "blue" => "azul",
+        _ => "no sé"
+    }.to_string()
+}
+
+//Exercise 2:
+fn exercise2() -> String {
+    let mut s = String::from("hello");
+    s.push(',');
+    s.push_str(" world");
+    s.push('!');
+    s
+}
+
+//Exercise 3:
+fn exercise3() -> String {
+    let s1 = String::from("hello,");
+    let s2 = String::from("world!");
+    let s3 = s1 + &s2;
+    s3
+}
+
+//Exercise 4:
+fn reverse_string(input: &str) -> String {
+    input.chars().rev().collect()
+}
+
+//Exercise 5:
+fn is_palindrome(word: &str) -> bool {
+    let len = word.len();
+    if len <= 1 {
+        return true;
+    }
+    let chars: Vec<char> = word.chars().collect();
+    for i in 0..len/2 {
+        if chars[i] != chars[len-i-1] {
+            return false;
+        }
+    }
+    true
+}
+
+//Exercise 6:
+fn count_char_occurrences(string: &str, ch: char) -> usize {
+    string.chars().filter(|&c| c == ch).count()
+}
