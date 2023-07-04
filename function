@@ -1,0 +1,24 @@
+// Exercise 1:
+fn sum(x: i32, y: i32) -> i32 {
+    x + y
+}
+
+//Exercise 2:
+pub fn sum_one_to_n(n: u32) -> u32 {
+    (1..=n).sum()
+}
+
+//Exercise 3:
+fn calculate_average(numbers: &[f64]) -> f64 {
+    if numbers.is_empty() {
+        return 0.0;
+    }
+    let sum: f64 = numbers.iter().sum();
+    sum / (numbers.len() as f64)
+}
+
+//Exercise 4:
+fn sum_even_numbers(numbers: &[i32]) -> i32 {
+    numbers.iter().filter(|&n| n % 2 == 0).sum()
+}
+
